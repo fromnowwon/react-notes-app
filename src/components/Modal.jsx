@@ -4,6 +4,24 @@ import "./Modal.css";
 const Modal = ({ handleShowModal, addNote }) => {
 	const [newText, setNewText] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
+	const [selectedColor, setSelectedColor] = useState("");
+
+	const palette = [
+		"hsl(0, 100%, 75%)",
+		"hsl(60, 100%, 75%)",
+		"hsl(120, 100%, 75%)",
+		"hsl(180, 100%, 75%)",
+		"hsl(240, 100%, 75%)",
+		"hsl(300, 100%, 75%)",
+	];
+
+	const getRandomColor = () => {
+		return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+	};
+
+	const selectColor = (color) => {
+		setSelectedColor(color);
+	};
 
 	const handleTextChange = (event) => {
 		setNewText(event.target.value);
@@ -16,6 +34,7 @@ const Modal = ({ handleShowModal, addNote }) => {
 			id: Date.now(),
 			text: newText,
 			date: formatDate(new Date()),
+			backgroundColor: selectedColor || getRandomColor(),
 		};
 
 		handleShowModal();
@@ -46,6 +65,18 @@ const Modal = ({ handleShowModal, addNote }) => {
 		<div className="overlay">
 			<div className="modal">
 				<h2 className="tit">새 메모</h2>
+				<div className="color-palette">
+					{palette.map((color) => (
+						<div
+							style={{ backgroundColor: color }}
+							onClick={() => selectColor(color)}
+						>
+							{selectedColor === color ? (
+								<span className="check-mark">✓</span>
+							) : null}
+						</div>
+					))}
+				</div>
 				<textarea
 					name="note-area"
 					id="note-area"

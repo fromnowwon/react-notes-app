@@ -33,3 +33,32 @@
 	font-size: 0.875rem;
 	color: red;
 }
+
+/* Palette */
+.color-palette {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.color-palette div {
+	position: relative;
+	width: 27px;
+	height: 27px;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.color-palette div:last-child {
+	margin-right: 0;
+}
+
+.check-mark {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 18px;
+}

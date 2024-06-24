@@ -30,7 +30,7 @@ const Card = ({ note, deleteNote, updateNote }) => {
 	};
 
 	return (
-		<div className="card">
+		<div className="card" style={{ backgroundColor: note.backgroundColor }}>
 			<div className="toggle-menu">
 				<button className="toggle-menu-btn" onClick={handleShowMenu}>
 					⁝

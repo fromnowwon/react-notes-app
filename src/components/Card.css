@@ -1,0 +1,72 @@
+.card {
+	position: relative;
+	width: 225px;
+	min-height: 225px;
+	padding: 40px 20px 20px;
+	margin: 0 20px 20px 0;
+	background-color: rgb(237, 182, 44);
+	border-radius: 15px;
+}
+
+.card-inner {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.main-text {
+	font-size: 1rem;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.date {
+	font-weight: 700;
+	font-size: 0.75rem;
+}
+
+/* Toggle Menu */
+.toggle-menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+.toggle-menu-btn {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.toggle-menu-list {
+	position: absolute;
+	right: -2px;
+	top: 35px;
+	width: 40px;
+	background-color: aliceblue;
+	border-radius: 3px;
+}
+
+.toggle-menu-list li {
+	margin: 2px 0;
+	font-size: 0.875rem;
+	text-align: center;
+	background-color: aliceblue;
+	cursor: pointer;
+}
+
+.toggle-menu-list li + li {
+	border-top: 1px solid #fff;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Card.css";
 
 const Card = ({ note, deleteNote, updateNote }) => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -31,7 +32,7 @@ const Card = ({ note, deleteNote, updateNote }) => {
 	return (
 		<div className="card">
 			<div className="toggle-menu">
-				<button className="toggle-btn" onClick={handleShowMenu}>
+				<button className="toggle-menu-btn" onClick={handleShowMenu}>
 					⁝
 				</button>
 				{showMenu && (
@@ -44,7 +45,7 @@ const Card = ({ note, deleteNote, updateNote }) => {
 				)}
 			</div>
 			{isEditing ? (
-				<div>
+				<div className="card-inner">
 					<textarea
 						name="edit-text"
 						id="edit-text"
@@ -60,7 +61,7 @@ const Card = ({ note, deleteNote, updateNote }) => {
 					</div>
 				</div>
 			) : (
-				<div>
+				<div className="card-inner">
 					<p className="main-text">{note.text}</p>
 					<p className="date">{note.date}</p>
 				</div>

@@ -25,7 +25,9 @@ function App() {
 				<button onClick={handleShowModal}>+</button>
 			</header>
 			<div className="cards-container">
-				<Card />
+				{notes.map((note) => (
+					<Card note={note} />
+				))}
 			</div>
 		</div>
 	);

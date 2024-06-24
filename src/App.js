@@ -15,6 +15,14 @@ function App() {
 		setNotes([...notes, newNote]);
 	};
 
+	const updateNote = (id, newNote) => {
+		const editedNote = notes.filter((note) =>
+			note.id === id ? (note.text = newNote) : note.text
+		);
+
+		setNotes(editedNote);
+	};
+
 	const deleteNote = (id) => {
 		const updatedNotes = notes.filter((note) => note.id !== id);
 		setNotes(updatedNotes);
@@ -31,7 +39,7 @@ function App() {
 			</header>
 			<div className="cards-container">
 				{notes.map((note) => (
-					<Card note={note} deleteNote={deleteNote} />
+					<Card note={note} deleteNote={deleteNote} updateNote={updateNote} />
 				))}
 			</div>
 		</div>

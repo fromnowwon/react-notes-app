@@ -11,9 +11,15 @@ function App() {
 		setShewModal(!showModal);
 	};
 
+	const addNote = (newNote) => {
+		setNotes([...notes, newNote]);
+	};
+
 	return (
 		<div className="App">
-			{showModal && <Modal handleShowModal={handleShowModal} />}
+			{showModal && (
+				<Modal handleShowModal={handleShowModal} addNote={addNote} />
+			)}
 			<header>
 				<h1>Notes</h1>
 				<button onClick={handleShowModal}>+</button>

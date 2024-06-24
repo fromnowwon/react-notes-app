@@ -29,20 +29,24 @@ function App() {
 	};
 
 	return (
-		<div className="App">
+		<main className="App">
 			{showModal && (
 				<Modal handleShowModal={handleShowModal} addNote={addNote} />
 			)}
-			<header>
-				<h1>Notes</h1>
-				<button onClick={handleShowModal}>+</button>
-			</header>
-			<div className="cards-container">
-				{notes.map((note) => (
-					<Card note={note} deleteNote={deleteNote} updateNote={updateNote} />
-				))}
+			<div className="container">
+				<header>
+					<h1>Notes</h1>
+					<button className="add-btn" onClick={handleShowModal}>
+						+
+					</button>
+				</header>
+				<div className="cards-container">
+					{notes.map((note) => (
+						<Card note={note} deleteNote={deleteNote} updateNote={updateNote} />
+					))}
+				</div>
 			</div>
-		</div>
+		</main>
 	);
 }
 

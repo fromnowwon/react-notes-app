@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Modal.css";
 
 const Modal = ({ handleShowModal, addNote }) => {
 	const [newText, setNewText] = useState("");
@@ -44,7 +45,7 @@ const Modal = ({ handleShowModal, addNote }) => {
 	return (
 		<div className="overlay">
 			<div className="modal">
-				<h2>새 메모</h2>
+				<h2 className="tit">새 메모</h2>
 				<textarea
 					name="note-area"
 					id="note-area"
@@ -57,10 +58,13 @@ const Modal = ({ handleShowModal, addNote }) => {
 				></textarea>
 				{errorMessage && <p className="error-message">{errorMessage}</p>}
 				<div className="btn-box">
-					<button className="add-btn" onClick={handleClickAdd}>
+					<button className="add-btn btn-primary" onClick={handleClickAdd}>
 						추가
 					</button>
-					<button className="cancel-btn" onClick={handleClickCancel}>
+					<button
+						className="cancel-btn btn-secondary"
+						onClick={handleClickCancel}
+					>
 						취소
 					</button>
 				</div>

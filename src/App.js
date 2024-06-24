@@ -15,6 +15,11 @@ function App() {
 		setNotes([...notes, newNote]);
 	};
 
+	const deleteNote = (id) => {
+		const updatedNotes = notes.filter((note) => note.id !== id);
+		setNotes(updatedNotes);
+	};
+
 	return (
 		<div className="App">
 			{showModal && (
@@ -26,7 +31,7 @@ function App() {
 			</header>
 			<div className="cards-container">
 				{notes.map((note) => (
-					<Card note={note} />
+					<Card note={note} deleteNote={deleteNote} />
 				))}
 			</div>
 		</div>

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 
-const Card = ({ note }) => {
+const Card = ({ note, deleteNote }) => {
 	const [showMenu, setShowMenu] = useState(false);
 
 	const handleShowMenu = () => {
 		setShowMenu(!showMenu);
+	};
+
+	const handleClickDelete = () => {
+		deleteNote(note.id);
 	};
 
 	return (
@@ -17,7 +21,7 @@ const Card = ({ note }) => {
 					<div className="toggle-menu-list">
 						<ul>
 							<li>수정</li>
-							<li>삭제</li>
+							<li onClick={handleClickDelete}>삭제</li>
 						</ul>
 					</div>
 				)}

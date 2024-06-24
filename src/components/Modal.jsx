@@ -17,6 +17,7 @@ const Modal = ({ handleShowModal, addNote }) => {
 			date: new Date(),
 		};
 
+		handleShowModal();
 		addNote(newNote);
 	};
 

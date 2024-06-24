@@ -14,7 +14,7 @@ const Modal = ({ handleShowModal, addNote }) => {
 		const newNote = {
 			id: Date.now(),
 			text: newText,
-			date: new Date(),
+			date: formatDate(new Date()),
 		};
 
 		handleShowModal();
@@ -24,6 +24,21 @@ const Modal = ({ handleShowModal, addNote }) => {
 	const handleClickCancel = () => {
 		handleShowModal();
 		setErrorMessage("");
+	};
+
+	const formatDate = (date) => {
+		const options = {
+			year: "numeric",
+			month: "2-digit",
+			day: "2-digit",
+			hour: "2-digit",
+			minute: "2-digit",
+			second: "2-digit",
+			hour12: false,
+			timeZone: "Asia/Seoul",
+		};
+
+		return new Intl.DateTimeFormat("ko-KR", options).format(date);
 	};
 
 	return (

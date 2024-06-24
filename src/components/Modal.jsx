@@ -46,7 +46,7 @@ const Modal = ({ handleShowModal, addNote }) => {
 			<div className="modal">
 				<h2>새 메모</h2>
 				<textarea
-					name="note"
+					name="note-area"
 					id="note-area"
 					className="note-area"
 					rows="10"

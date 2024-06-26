@@ -42,7 +42,7 @@ npm run dev
 
 ## 사용 기술
 
-- Vue.js
+- React.js
 - JavaScript
 - HTML/CSS
 
